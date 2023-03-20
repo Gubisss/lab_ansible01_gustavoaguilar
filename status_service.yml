@@ -1,0 +1,14 @@
+---
+- name: Verificar o Status do IIS
+  hosts: win
+  gather_facts: True
+  tasks: 
+  - name: Pegar Status do IIS
+    ansible.windows.win_service_info:
+      name: IIS Admin Service
+
+    register: service_info
+
+  - name: Mostrar Status
+    ansible.builtin.debug:
+      var: service_info

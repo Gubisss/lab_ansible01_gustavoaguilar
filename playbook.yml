@@ -1,0 +1,10 @@
+---
+- name: playbook
+  hosts: win
+  tasks: 
+  - win_feature: 
+      name: "web-server"
+      state: present
+      restart: yes
+      include_sub_features: yes
+      include_management_tools: yes
