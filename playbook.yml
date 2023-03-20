@@ -4,7 +4,7 @@
   tasks: 
   - win_feature: 
       name: "web-server"
-      state: present
+      state: present #se você quiser desligar coloque absent 
       restart: yes
       include_sub_features: yes
       include_management_tools: yes
